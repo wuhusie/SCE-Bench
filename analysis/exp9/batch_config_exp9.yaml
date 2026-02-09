@@ -1,0 +1,46 @@
+# ==============================================================================
+# 实验9：真实人类回答记忆 (Real Human Answer Memory)
+#
+# 协议：
+#   - System prompt: profile + env
+#   - User prompt: 问卷问题 + t-1 期真实人类回答 (如有)
+#
+# 使用:
+#   bash src/analysis/exp9/run_exp9.sh
+#   或:
+#   bash src/run_batch.sh src/analysis/exp9/batch_config_exp9.yaml
+# ==============================================================================
+
+jobs:
+  # --------------------------------------------------------------------------
+  # 本地 vLLM 示例
+  # --------------------------------------------------------------------------
+  - name: "Exp9-HumanMemory-Qwen3-Instruct"
+    mode: local_vllm
+    model_id: 4                           # Qwen3-30B-A3B-Instruct-2507-FP8
+    # sce_experiments: [exp9_spending, exp9_credit, exp9_labor]
+    sce_experiments: [exp9_credit, exp9_labor]
+    profile_features: "all"
+    env_features: "all"
+    output_dir: "/root/autodl-fs/result/exp9"
+
+  # --------------------------------------------------------------------------
+  # API 模式示例 (取消注释使用)
+  # --------------------------------------------------------------------------
+  # - name: "Exp9-HumanMemory-GPT4o"
+  #   mode: api
+  #   provider: openai_proxy
+  #   sce_experiments: [exp9_spending, exp9_credit, exp9_labor]
+  #   profile_features: "all"
+  #   env_features: "all"
+  #   output_dir: "/root/autodl-fs/result/exp9"
+
+  # --------------------------------------------------------------------------
+  # 调试模式示例
+  # --------------------------------------------------------------------------
+  # - name: "Exp9-Debug"
+  #   mode: local_vllm
+  #   model_id: 4
+  #   sce_experiments: [exp9_spending]
+  #   debug_limit: 10
+  #   output_dir: "/root/autodl-fs/result/exp9"

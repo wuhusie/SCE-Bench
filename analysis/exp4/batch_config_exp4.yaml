@@ -1,0 +1,11 @@
+jobs:
+  - name: "Exp4-JSON-Qwen3"
+    mode: local_vllm
+    model_id: 4
+    # debug_limit: Null
+    sample_ratio: 1
+    seed: 2026
+    sce_experiments: [credit, spending, labor]
+    profile_features: "all"
+    env_features: "all"
+    output_dir: "/root/autodl-fs/result/exp4/N1/Json-Language"

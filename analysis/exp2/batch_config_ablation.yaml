@@ -1,0 +1,680 @@
+description: 'Experiment 2: Ablation Study (Leave-One-Out) with 10% Sampling'
+jobs:
+- name: Exp2 Ablation - credit - No age
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No gender
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No education
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No marital_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No state_residence
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No housing_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No own_other_home
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No health_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No employment_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No income
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No inflation
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features: all
+  env_features:
+  - 2
+  - 3
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No unemployment
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features: all
+  env_features:
+  - 1
+  - 3
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - credit - No interest_rate
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features: all
+  env_features:
+  - 1
+  - 2
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No age
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No gender
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No education
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No marital_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No state_residence
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No housing_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No own_other_home
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No health_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No employment_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No income
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No inflation
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features: all
+  env_features:
+  - 2
+  - 3
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No unemployment
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features: all
+  env_features:
+  - 1
+  - 3
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - spending - No interest_rate
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features: all
+  env_features:
+  - 1
+  - 2
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No age
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No gender
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No education
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No marital_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No state_residence
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No housing_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 7
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No own_other_home
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 8
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No health_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 9
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No employment_status
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 10
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No income
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No inflation
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features: all
+  env_features:
+  - 2
+  - 3
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No unemployment
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features: all
+  env_features:
+  - 1
+  - 3
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2
+- name: Exp2 Ablation - labor - No interest_rate
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features: all
+  env_features:
+  - 1
+  - 2
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/exp2

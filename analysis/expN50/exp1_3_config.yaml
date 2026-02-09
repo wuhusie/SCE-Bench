@@ -1,0 +1,30 @@
+# Exp1.3 Configuration File
+description: "Distribution Probe with Full Features (10% Sampling)"
+
+# Sampling Configuration
+sample_ratio: 0.1
+seed: 2026
+
+# Model Configuration (Supports local_vllm / Remote API)
+# local_vllm auto-detects model; Remote API requires model name
+default_provider: local_vllm
+# default_model: gpt-4o  # Required only for remote API, local_vllm auto-detects
+
+# Experiment List
+experiments:
+  - labor
+  - credit
+  - spending
+
+# Feature Configuration (All Attributes)
+profile_features: all
+env_features: all
+
+# Batch Sampling
+n_samples: 50  # Can be overridden by --n-samples
+
+# Output Path (Server Absolute Path)
+output_dir: /root/autodl-fs/result/exp1.3
+
+# Debug Mode (Limit number of processed users, null or unset means full data)
+debug_limit: 10  # Uncomment to enable debug mode

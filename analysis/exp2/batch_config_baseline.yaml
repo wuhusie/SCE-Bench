@@ -1,0 +1,32 @@
+description: 'Experiment 2: Baseline (Non-Ablation) with 10% Sampling'
+jobs:
+- name: Exp2 Baseline - credit
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - credit
+  profile_features: all
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/sce/exp2
+- name: Exp2 Baseline - spending
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - spending
+  profile_features: all
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/sce/exp2
+- name: Exp2 Baseline - labor
+  mode: local_vllm
+  model_id: 4
+  sce_experiments:
+  - labor
+  profile_features: all
+  env_features: all
+  sample_ratio: 0.1
+  seed: 2026
+  output_dir: result/sce/exp2

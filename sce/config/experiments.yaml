@@ -1,0 +1,21 @@
+common:
+  profile_path: "data/sce/preProcessed/sceProfile.xlsx"
+  macro_dir: "data/sce/economics/macroIndicator"
+  cache_dir: "data/sce/cache"
+  cutoff_date: 201512
+  save_every: 100
+  debug_limit: Null
+  base_dir: "/root/autodl-fs"
+
+experiments:
+  spending:
+    data_file: "data/sce/original/spending_original.xlsx"
+    description: "Spending Survey"
+
+  credit:
+    data_file: "data/sce/original/credit_original.xlsx"
+    description: "Credit Access Survey"
+
+  labor:
+    data_file: "data/sce/original/labor_original.xlsx"
+    description: "Labor Market Survey"

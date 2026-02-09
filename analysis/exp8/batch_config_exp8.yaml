@@ -1,0 +1,49 @@
+# ==============================================================================
+# 实验8：模型回答记忆 (LLM Response Memory)
+#
+# 协议：
+#   - System prompt: 问卷问题 (不变)
+#   - User prompt: env + profile + 上期模型回答 (如有)
+#
+# 前置条件：
+#   必须先跑完 exp1-1 全量实验，得到结果文件
+#
+# 使用:
+#   bash src/analysis/exp8/run_exp8.sh
+#   或:
+#   bash src/run_batch.sh src/analysis/exp8/batch_config_exp8.yaml
+# ==============================================================================
+
+# 第一轮实验结果目录 (exp1-1 的输出)
+prior_result_dir: &prior_dir "/root/autodl-fs/result/exp1.1/Qwen3-30B-A3B-Instruct-2507-FP8"
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Spending 任务
+  # --------------------------------------------------------------------------
+  - name: "Exp8-LLMMemory-Spending"
+    mode: local_vllm
+    model_id: 4                           # Qwen3-30B-A3B-Instruct-2507-FP8
+    sce_experiments: [exp8_spending]
+    prior_result: "/root/autodl-fs/result/exp1.1/spending_Qwen3-30B-A3B-Instruct-2507-FP8.csv"
+    output_dir: "/root/autodl-fs/result/exp8"
+
+  # --------------------------------------------------------------------------
+  # Credit 任务
+  # --------------------------------------------------------------------------
+  - name: "Exp8-LLMMemory-Credit"
+    mode: local_vllm
+    model_id: 4
+    sce_experiments: [exp8_credit]
+    prior_result: "/root/autodl-fs/result/exp1.1/credit_Qwen3-30B-A3B-Instruct-2507-FP8.csv"
+    output_dir: "/root/autodl-fs/result/exp8"
+
+  # --------------------------------------------------------------------------
+  # Labor 任务
+  # --------------------------------------------------------------------------
+  - name: "Exp8-LLMMemory-Labor"
+    mode: local_vllm
+    model_id: 4
+    sce_experiments: [exp8_labor]
+    prior_result: "/root/autodl-fs/result/exp1.1/labor_Qwen3-30B-A3B-Instruct-2507-FP8.csv"
+    output_dir: "/root/autodl-fs/result/exp8"

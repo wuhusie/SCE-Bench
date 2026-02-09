@@ -1,0 +1,8 @@
+jobs:
+  - name: "Exp3-ThirdPerson-Qwen3"
+    mode: local_vllm
+    model_id: 4
+    sce_experiments: [credit, spending, labor]
+    profile_features: "all"
+    env_features: "all"
+    output_dir: "/root/autodl-fs/result/exp3"

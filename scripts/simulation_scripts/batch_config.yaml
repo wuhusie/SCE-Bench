@@ -1,0 +1,124 @@
+# =============================================================================
+# Batch Experiment Configuration File
+# Each job defines a set of experiments; scripts will execute them sequentially
+# =============================================================================
+#
+# Field Descriptions:
+#   name:             Task name (for logging display only)
+#   mode:             Running mode, local_vllm or api
+#   model_id:         Local model number (required if mode=local_vllm)
+#   provider:         API provider name (required if mode=api)
+#   think_mode:       Qwen3 thinking mode, optional think/no_think; leave blank for non-Qwen3 models
+#   debug_limit:      Debug limit, leave blank to run full data
+#   sce_experiments:  SCE experimental tasks, leave blank to skip SCE
+#   cex_experiments:  CEX experimental tasks, leave blank to skip CEX
+#   profile_features: Profile features, leave blank to use all
+#   env_features:     Environment features, leave blank to use all
+#
+# =============================================================================
+# Parameter Format Specification (Important!)
+# =============================================================================
+# All list-type parameters must uniformly use YAML list format: [a, b, c]
+# The special value "all" must use string format
+#
+# Correct Examples:
+#   sce_experiments: [credit, spending, labor]    # YAML list
+#   sce_experiments: "all"                        # String represents all
+#   profile_features: [1, 2, 3]                   # Numbered index list
+#   profile_features: [age, gender, income]       # Feature name list
+#   profile_features: "all"                       # String represents all
+#
+# Incorrect Examples:
+#   profile_features: "1,2,3"                     # Do not use comma-separated strings
+#   profile_features: [1 2 3]                     # List elements must be comma-separated
+#
+# =============================================================================
+# Model Number Mapping
+# =============================================================================
+#   1) Meta-Llama-3.1-70B-bnb-4bit
+#   2) Meta-Llama-3.1-70B-Instruct-bnb-4bit
+#   3) Qwen3-30B-A3B-FP8
+#   4) Qwen3-30B-A3B-Instruct-2507-FP8
+#   5) Qwen3-0.6B
+#
+# =============================================================================
+# Experimental Task Mapping
+# =============================================================================
+# SCE Dataset (sce_experiments):
+#   credit   - Credit expectations
+#   spending - Spending expectations
+#   labor    - Labor expectations
+#
+# CEX Dataset (cex_experiments):
+#   living_cost - Living cost expectations
+#
+# Examples:
+#   sce_experiments: "all"                  # Run all SCE experiments
+#   sce_experiments: [credit, spending]     # Run only credit and spending
+#   sce_experiments: [credit]               # Run only credit
+#   # Skip SCE dataset if sce_experiments is not provided
+#
+# =============================================================================
+# SCE Feature Mapping (Number -> Feature Name)
+# =============================================================================
+# Profile Features:
+#   1) age               - Age
+#   2) gender            - Gender
+#   3) education         - Education level
+#   4) marital_status    - Marital status
+#   5) state_residence   - State of residence
+#   6) housing_status    - Housing status
+#   7) own_other_home    - Own other property
+#   8) health_status     - Health status
+#   9) employment_status - Employment status
+#  10) income            - Household income
+#
+# Environment Features:
+#   1) inflation         - CPI Inflation rate
+#   2) unemployment      - Unemployment rate
+#   3) interest_rate     - Federal Funds Rate
+#
+# =============================================================================
+# CEX Feature Mapping (Number -> Feature Name)
+# =============================================================================
+# Profile Features:
+#   1) age            - Age
+#   2) gender         - Gender
+#   3) marital_status - Marital status
+#   4) education      - Education level
+#   5) race           - Race
+#   6) household_size - Household size
+#   7) children       - Number of children
+#   8) region         - Region
+#   9) income         - Income
+#  10) previous_cost  - Previous cost
+#
+# Environment Features:
+#   1) inflation      - Inflation rate
+#   2) unemployment   - Unemployment rate
+#   3) interest_rate  - Federal Funds Rate
+#   4) gdp            - GDP growth rate
+#
+# =============================================================================
+# Feature Usage Examples
+# =============================================================================
+#   profile_features: "all"                       # Use all features
+#   profile_features: [1, 2, 3]                   # Use features corresponding to indices 1, 2, 3
+#   profile_features: [age, gender, income]       # Use specified feature names
+#   env_features: [1, 2]                          # Use features corresponding to indices 1, 2
+#   # Use all features by default if not provided
+#
+# =============================================================================
+
+jobs:
+  # ===========================================
+  # Full Experimental Task (Qwen3-30B-Instruct-2507)
+  # ===========================================
+  - name: "Full Run Qwen3-30B-Instruct-2507"
+    mode: local_vllm
+    model_id: 6
+    # think_mode:  # Model 4 defaults to not supported/not required to explicitly set think mode
+    # debug_limit: # Comment out to run full dataset data
+    sce_experiments: [credit, spending, labor]
+    profile_features: "all"
+    env_features: "all"

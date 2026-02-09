@@ -1,0 +1,53 @@
+providers:
+  local_vllm:
+    api_base: "http://localhost:8000/v1"
+    api_key: "EMPTY"
+    default_model: null  # auto-detect
+    max_tokens: 4096
+    temperature: 1
+    max_concurrent: 150
+
+  gpt-3.5-turbo:
+    api_base: "https://api1.xxxxxxx.com/v1"
+    api_key: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    default_model: "gpt-3.5-turbo"
+    max_tokens: 4096
+    temperature: 1
+    # max_concurrent: 10
+
+  gpt_5_mini_minimal:
+    api_base: "https://api1.xxxxxxx.com/v1"
+    api_key: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    default_model: "gpt-5-mini"
+    reasoning_effort: "minimal"
+    max_tokens: 40960
+    temperature: 1
+    # max_concurrent: 50
+  
+  gpt_5_mini_medium:
+    api_base: "https://api1.xxxxxxx.com/v1"
+    api_key: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    default_model: "gpt-5-mini"
+    reasoning_effort: "medium"
+    max_tokens: 40960
+    temperature: 1
+    # max_concurrent: 50
+
+  gemini_3_flash_nothinking:
+    api_base: "https://api1.xxxxxxx.com/v1"
+    api_key: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    default_model: "gemini-3-flash-preview-nothinking"
+    max_tokens: 40960
+    temperature: 1
+    # max_concurrent: 50
+
+  gemini_3_flash_thinking:
+    api_base: "https://api1.uiuiapi.com/v1"
+    api_key: "sk-XXpJKjoqXml9Cc6qCyXs8nQNyBTVj9ZmItppjahdcgveG1BY"
+    default_model: "gemini-3-flash-preview-thinking"
+    max_tokens: 40960
+    temperature: 1
+    # max_concurrent: 50
+
+# Currently active provider (set to local_vllm to avoid openai_proxy lookup failure)
+active_provider: "local_vllm"
